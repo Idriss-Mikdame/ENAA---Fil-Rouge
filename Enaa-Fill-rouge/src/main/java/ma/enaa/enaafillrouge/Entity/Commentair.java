@@ -1,9 +1,8 @@
 package ma.enaa.enaafillrouge.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Commentair {
@@ -12,4 +11,48 @@ public class Commentair {
     private Long id;
     private String commentair;
     private int note;
+    @ManyToOne
+    private Produit produit;
+    @OneToMany(mappedBy = "commentair")
+    private List<Client> client;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCommentair() {
+        return commentair;
+    }
+
+    public void setCommentair(String commentair) {
+        this.commentair = commentair;
+    }
+
+    public int getNote() {
+        return note;
+    }
+
+    public void setNote(int note) {
+        this.note = note;
+    }
+
+    public Produit getProduit() {
+        return produit;
+    }
+
+    public void setProduit(Produit produit) {
+        this.produit = produit;
+    }
+
+    public List<Client> getClient() {
+        return client;
+    }
+
+    public void setClient(List<Client> client) {
+        this.client = client;
+    }
 }

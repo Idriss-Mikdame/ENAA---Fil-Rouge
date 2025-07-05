@@ -11,10 +11,10 @@
     </parent>
 
     <groupId>com.marketplace</groupId>
-    <artifactId>ItManagment</artifactId>
+    <artifactId>Enna-Fill-rouge</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ItManagment</name>
-    <description>ItManagment</description>
+    <name>Enna-Fill-rouge</name>
+    <description>Enna-Fill-rouge</description>
 
     <properties>
         <java.version>17</java.version>
