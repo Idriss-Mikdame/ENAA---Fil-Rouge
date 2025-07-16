@@ -1,10 +1,15 @@
 package ma.enaa.enaafillrouge.Dto;
 
 
-public class PanierDto{
-    Long id;
-    double total;
+import ma.enaa.enaafillrouge.Entity.Client;
 
+import java.util.List;
+
+public class PanierDto{
+    private Long id;
+    private double total;
+    private Long clientId;
+    Long produitId;
     public Long getId() {
         return id;
     }
@@ -19,5 +24,24 @@ public class PanierDto{
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public Long getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
+    }
+
+
+
+
+    public Long getProduitId() {
+        return produitId;
+    }
+
+    public void setProduitId(Long produitId) {
+        this.produitId = produitId;
     }
 }

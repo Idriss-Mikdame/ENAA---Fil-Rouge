@@ -10,15 +10,12 @@ public class Panier {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "panier")
-
-    private List<Client> clients;
-
+    @ManyToOne
+    private Client client;
     private double total;
 
-    @OneToMany(mappedBy = "panier", cascade = CascadeType.ALL, orphanRemoval = true)
-
-    private List<ArticleDePanier> articlesDePanier;
+    @ManyToOne
+    private Produit produit;
 
     public Long getId() {
         return id;
@@ -28,12 +25,12 @@ public class Panier {
         this.id = id;
     }
 
-    public List<Client> getClients() {
-        return clients;
+    public Client getClient() {
+        return client;
     }
 
-    public void setClients(List<Client> clients) {
-        this.clients = clients;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public double getTotal() {
@@ -44,11 +41,11 @@ public class Panier {
         this.total = total;
     }
 
-    public List<ArticleDePanier> getArticlesDePanier() {
-        return articlesDePanier;
+    public Produit getProduit() {
+        return produit;
     }
 
-    public void setArticlesDePanier(List<ArticleDePanier> articlesDePanier) {
-        this.articlesDePanier = articlesDePanier;
+    public void setProduit(Produit produit) {
+        this.produit = produit;
     }
 }
