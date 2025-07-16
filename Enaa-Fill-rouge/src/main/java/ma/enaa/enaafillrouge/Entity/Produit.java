@@ -18,16 +18,23 @@ public class Produit {
     private String taille;
     private String optionsSpeciales;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Category category;
 
     @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Commentair > commentaires;
     @OneToMany(mappedBy = "produit")
-    private List<ArticleDeCommande> articleDeCommandes;
+    private List<Commande> commande;
     @OneToMany(mappedBy = "produit")
-    private List<ArticleDePanier> articleDePaniers;
+    private List<Panier> panier;
+
+    public List<Panier> getPanier() {
+        return panier;
+    }
+
+    public void setPanier(List<Panier> panier) {
+        this.panier = panier;
+    }
 
     public Long getId() {
         return id;
@@ -117,19 +124,11 @@ public class Produit {
         this.commentaires = commentaires;
     }
 
-    public List<ArticleDeCommande> getArticleDeCommandes() {
-        return articleDeCommandes;
+    public List<Commande> getCommande() {
+        return commande;
     }
 
-    public void setArticleDeCommandes(List<ArticleDeCommande> articleDeCommandes) {
-        this.articleDeCommandes = articleDeCommandes;
-    }
-
-    public List<ArticleDePanier> getArticleDePaniers() {
-        return articleDePaniers;
-    }
-
-    public void setArticleDePaniers(List<ArticleDePanier> articleDePaniers) {
-        this.articleDePaniers = articleDePaniers;
+    public void setCommande(List<Commande> commande) {
+        this.commande = commande;
     }
 }

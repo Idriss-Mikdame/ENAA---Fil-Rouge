@@ -11,6 +11,7 @@ public class ProduitDto  {
     String couleur;
     String taille;
     String optionsSpeciales;
+    Long categoryid;
 
     public Long getId() {
         return id;
@@ -83,4 +84,14 @@ public class ProduitDto  {
     public void setOptionsSpeciales(String optionsSpeciales) {
         this.optionsSpeciales = optionsSpeciales;
     }
+
+    public Long getCategoryid() {
+        return categoryid;
+    }
+
+    public void setCategoryid(Long categoryid) {
+        this.categoryid = categoryid;
+    }
+
+
 }
