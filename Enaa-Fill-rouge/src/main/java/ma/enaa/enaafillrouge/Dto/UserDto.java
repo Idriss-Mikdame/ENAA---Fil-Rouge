@@ -1,5 +1,7 @@
 package ma.enaa.enaafillrouge.Dto;
 
+import ma.enaa.enaafillrouge.Entity.Role;
+
 import java.time.LocalDate;
 
 
@@ -9,6 +11,7 @@ public class UserDto {
     String prenom;
     String email;
     String motDePasse;
+    Role role;
     LocalDate dateCreation;
 
     public Long getId() {
@@ -57,5 +60,13 @@ public class UserDto {
 
     public void setDateCreation(LocalDate dateCreation) {
         this.dateCreation = dateCreation;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
