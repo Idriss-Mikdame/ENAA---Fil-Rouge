@@ -2,14 +2,16 @@ package ma.enaa.enaafillrouge.Entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
-    @OneToOne
-    private Produit produit;
+    @OneToMany(mappedBy = "category")
+    private List<Produit> produit;
 
     public Long getId() {
         return id;
@@ -27,11 +29,11 @@ public class Category {
         this.nom = nom;
     }
 
-    public Produit getProduit() {
+    public List<Produit> getProduit() {
         return produit;
     }
 
-    public void setProduit(Produit produit) {
+    public void setProduit(List<Produit> produit) {
         this.produit = produit;
     }
 }

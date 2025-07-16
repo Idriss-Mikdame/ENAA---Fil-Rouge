@@ -2,39 +2,41 @@ package ma.enaa.enaafillrouge.Entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Client extends User {
     public Client() {
         this.setRole(Role.CLIENT);
     }
-    @ManyToOne
-    private Commentair commentair;
-    @ManyToOne
-    private Panier panier;
-    @ManyToOne
-    private Commande commande;
+    @OneToMany(mappedBy = "client")
+    private List<Commentair> commentair;
+    @OneToMany
+    private List<Panier> panier;
+    @OneToMany(mappedBy = "client")
+    private List<Commande> commande;
 
-    public Commentair getCommentair() {
+    public List<Commentair> getCommentair() {
         return commentair;
     }
 
-    public void setCommentair(Commentair commentair) {
+    public void setCommentair(List<Commentair> commentair) {
         this.commentair = commentair;
     }
 
-    public Panier getPanier() {
+    public List<Panier> getPanier() {
         return panier;
     }
 
-    public void setPanier(Panier panier) {
+    public void setPanier(List<Panier> panier) {
         this.panier = panier;
     }
 
-    public Commande getCommande() {
+    public List<Commande> getCommande() {
         return commande;
     }
 
-    public void setCommande(Commande commande) {
+    public void setCommande(List<Commande> commande) {
         this.commande = commande;
     }
 }
