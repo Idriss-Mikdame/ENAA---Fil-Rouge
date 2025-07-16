@@ -13,8 +13,8 @@ public class Commentair {
     private int note;
     @ManyToOne
     private Produit produit;
-    @OneToMany(mappedBy = "commentair")
-    private List<Client> client;
+    @ManyToOne
+    private Client client;
 
     public Long getId() {
         return id;
@@ -48,11 +48,11 @@ public class Commentair {
         this.produit = produit;
     }
 
-    public List<Client> getClient() {
+    public Client getClient() {
         return client;
     }
 
-    public void setClient(List<Client> client) {
+    public void setClient(Client client) {
         this.client = client;
     }
 }

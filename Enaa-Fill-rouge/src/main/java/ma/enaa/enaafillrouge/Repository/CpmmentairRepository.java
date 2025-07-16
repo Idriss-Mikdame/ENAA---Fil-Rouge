@@ -8,6 +8,6 @@ import java.util.List;
 @Repository
 
 public interface CpmmentairRepository extends JpaRepository<Commentair,Long> {
-    List<Commentair> findByProduitId(Long produitId);
+//    List<Commentair> findByProduitId(Long produitId);
 
 }
