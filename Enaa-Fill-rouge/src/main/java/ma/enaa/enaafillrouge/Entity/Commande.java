@@ -17,11 +17,11 @@ public class Commande {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @OneToMany(mappedBy = "commande")
-    private List<Client> client;
+    @ManyToOne
+    private Client client;
 
-    @OneToMany(mappedBy = "commande", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ArticleDeCommande> articlesDeCommande;
+    @ManyToOne
+    private Produit produit;
 
     public Long getId() {
         return id;
@@ -55,19 +55,19 @@ public class Commande {
         this.status = status;
     }
 
-    public List<Client> getClient() {
+    public Client getClient() {
         return client;
     }
 
-    public void setClient(List<Client> client) {
+    public void setClient(Client client) {
         this.client = client;
     }
 
-    public List<ArticleDeCommande> getArticlesDeCommande() {
-        return articlesDeCommande;
+    public Produit getProduit() {
+        return produit;
     }
 
-    public void setArticlesDeCommande(List<ArticleDeCommande> articlesDeCommande) {
-        this.articlesDeCommande = articlesDeCommande;
+    public void setProduit(Produit produit) {
+        this.produit = produit;
     }
 }
